@@ -1,18 +1,17 @@
 // Store the wallet amount to your local storage with key "amount"
 
-    let total = JSON.parse(localStorage.getItem("amount")) || [];
+    let amount = JSON.parse(localStorage.getItem("amount")) || [];
     
-    document.getElementById('wallet').innerText = total;
+    document.getElementById('wallet').innerText = amount;
 
     
 
 function addMoney()
 {
-    // event.preventDefault();
-    let addamount = document.getElementById('amount').value;
-    // total.push(addamount);
-
+    
+    let amount = document.getElementById('amount').value;
     let wallet = document.getElementById('wallet').innerText
-    wallet = Numbe
-    localStorage.setItem("amount", JSON.stringify(addamount));
+    wallet = Number(wallet)+Number(amount);
+    document.getElementById('wallet').innerText = wallet;
+    localStorage.setItem("amount", JSON.stringify(wallet));
 }
